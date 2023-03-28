@@ -46,18 +46,21 @@ export const post: APIRoute = async context => {
           temperature
         })
       }
-    ).catch(err => {
-      return new Response(
-        JSON.stringify({
-          error: {
-            message: err.message
-          }
-        }),
-        { status: 500 }
-      )
-    })
-    console.log("请求结果为：", rawRes.body)
-    return new Response(rawRes.body)
+    )
+      .then(res => res.json())
+      .catch(err => {
+        return new Response(
+          JSON.stringify({
+            error: {
+              message: err.message
+            }
+          }),
+          { status: 500 }
+        )
+      })
+    const res = JSON.stringify(rawRes)
+    console.log("请求结果为：", res)
+    return new Response(res)
   } catch (err: any) {
     return new Response(
       JSON.stringify({

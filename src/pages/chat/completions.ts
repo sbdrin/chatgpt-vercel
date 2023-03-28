@@ -7,7 +7,12 @@ const maxTokens = 3000
 export const post: APIRoute = async context => {
   try {
     const body = await context.request.json()
-    const { messages, temperature = 0.6 } = body as {
+    const {
+      messages,
+      temperature = 0.6,
+      model = "gpt-3.5-turbo"
+    } = body as {
+      model: string
       messages?: ChatMessage[]
       temperature?: number
     }
@@ -41,7 +46,7 @@ export const post: APIRoute = async context => {
         timeout: 10000,
         method: "POST",
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
+          model,
           messages,
           temperature
         })

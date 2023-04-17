@@ -18,7 +18,7 @@ export default function SettingAction(props: {
   return (
     <div class="text-sm text-slate-7 dark:text-slate mb-2">
       <Show when={shown()}>
-        <SettingItem icon="i-ri:lock-password-line" label="网站密码">
+        <SettingItem icon="i-ri:lock-password-line" label="密码">
           <input
             type="password"
             value={props.setting().password}
@@ -31,7 +31,7 @@ export default function SettingAction(props: {
             }}
           />
         </SettingItem>
-        <SettingItem icon="i-carbon:api" label="OpenAI API Key">
+        <SettingItem icon="i-carbon:api" label="调试Key">
           <input
             type="password"
             value={props.setting().openaiAPIKey}
@@ -44,7 +44,7 @@ export default function SettingAction(props: {
             }}
           />
         </SettingItem>
-        <SettingItem icon="i-carbon:user-online" label="系统角色指令">
+        {/* <SettingItem icon="i-carbon:user-online" label="系统角色指令">
           <input
             type="text"
             value={props.setting().systemRule}
@@ -56,8 +56,8 @@ export default function SettingAction(props: {
               })
             }}
           />
-        </SettingItem>
-        <SettingItem icon="i-carbon:data-enrichment" label="思维发散程度">
+        </SettingItem> */}
+        <SettingItem icon="i-carbon:data-enrichment" label="发散程度">
           <input
             type="range"
             min={0}
@@ -74,7 +74,7 @@ export default function SettingAction(props: {
             }}
           />
         </SettingItem>
-        <SettingItem
+        {/* <SettingItem
           icon="i-carbon:save-image"
           label="记录对话内容，刷新不会消失"
         >
@@ -92,10 +92,10 @@ export default function SettingAction(props: {
             />
             <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>
           </label>
-        </SettingItem>
-        <SettingItem
+        </SettingItem> */}
+        {/* <SettingItem
           icon="i-carbon:3d-curve-auto-colon"
-          label="开启连续对话，将加倍消耗 Token"
+          label="开启连续对话"
         >
           <label class="relative inline-flex items-center cursor-pointer ml-1">
             <input
@@ -111,7 +111,7 @@ export default function SettingAction(props: {
             />
             <div class="w-9 h-5 bg-slate bg-op-15 peer-focus:outline-none peer-focus:ring-0  rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate"></div>
           </label>
-        </SettingItem>
+        </SettingItem> */}
         <hr class="mt-2 bg-slate-5 bg-op-15 border-none h-1px"></hr>
       </Show>
       <div class="mt-2 flex items-center justify-between">
@@ -200,7 +200,7 @@ async function exportJpg() {
     const url = await toJpeg(messageContainer)
     const a = document.createElement("a")
     a.href = url
-    a.download = `ChatGPT-${dateFormat(new Date(), "HH-MM-SS")}.jpg`
+    a.download = `ChatVi-${dateFormat(new Date(), "HH-MM-SS")}.jpg`
     a.click()
   }
   if (!isMobile() && navigator.clipboard) {
@@ -224,7 +224,7 @@ async function exportMD(messages: ChatMessage[]) {
   const role = {
     system: "系统",
     user: "我",
-    assistant: "ChatGPT"
+    assistant: "ChatVi"
   }
   await copyToClipboard(
     messages

@@ -210,7 +210,7 @@ export default function (props: {
       ])
     }
     try {
-      await fetchGPT(inputValue)
+      await fetchVi(inputValue)
     } catch (error: any) {
       setLoading(false)
       setController()
@@ -227,7 +227,7 @@ export default function (props: {
     archiveCurrentMessage()
   }
 
-  async function fetchGPT(inputValue: string) {
+  async function fetchVi(inputValue: string) {
     setLoading(true)
     const controller = new AbortController()
     setController(controller)
@@ -386,7 +386,7 @@ export default function (props: {
           containerWidth() === "init"
             ? {}
             : {
-                transition: "opacity 1s ease-in-out",
+                // transition: "opacity 1s ease-in-out",
                 width: containerWidth(),
                 opacity: 100,
                 "background-color": "var(--c-bg)"

@@ -77,7 +77,7 @@ export const post: APIRoute = async context => {
           )
           return new Response(await genBillingsTable(billings))
         } else {
-          throw new Error("没有填写 OpenAI API key，不会查询内置的 Key。")
+          throw new Error("没有填写 key，不会查询内置的 Key。")
         }
       } else if (content.startsWith("sk-")) {
         const billings = await Promise.all(
@@ -89,7 +89,7 @@ export const post: APIRoute = async context => {
 
     const apiKey = randomKey(splitKeys(key))
 
-    if (!apiKey) throw new Error("没有填写 OpenAI API key，或者 key 填写错误。")
+    if (!apiKey) throw new Error("没有填写key，或者 key 填写错误。")
 
     const tokens = messages.reduce((acc, cur) => {
       const tokens = countTokens(cur.content)

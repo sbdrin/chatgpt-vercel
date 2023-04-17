@@ -25,19 +25,16 @@ if (import.meta.env.DEFAULT_SETTING) {
 const _reset = import.meta.env.RESET_CONTINUOUS_DIALOGUE_OPTION
 ---
 
-<Layout title="ChatGPT">
+<Layout title="研发助手">
   <main class="before sm:pt-5em py-2em">
     <Header />
     <Main
       env={{
         defaultSetting,
         defaultMessage,
-        resetContinuousDialogue:
-          _reset && _reset !== String(resetContinuousDialogue)
-            ? !resetContinuousDialogue
-            : resetContinuousDialogue
+        resetContinuousDialogue: false
       }}
-      prompts={prompts}
+      prompts={[]}
       client:visible
     />
   </main>

@@ -1,14 +1,14 @@
-# ChatGPT-Vercel
+# ChatVi-Vercel
 ![](assets/preview-light.png#gh-light-mode-only)
 ![](assets/preview-dark.png#gh-dark-mode-only)
 
-> 本项目基于 [chatgpt-demo](https://github.com/ddiu8081/chatgpt-demo) 开发。
+> 本项目基于 [chatVi-demo](https://github.com/ddiu8081/chatVi-demo) 开发。
 
 在线预览:
 
 1. [chatsverse.xyz](https://www.chatsverse.xyz)，由 [@Airyland](https://m.okjike.com/users/C6C8DE3A-E89D-4978-9E7D-B2E167D835A9) 免费提供。
-2. ~~[aitoolgpt.com](https://www.aitoolgpt.com)，由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515c86934a9) 免费提供~~。（2022.03.22 壮烈牺牲，提醒大家不要过度分享自己的站点出去，指不定 ChatGPT 说出什么违禁词出来）。
-3. [vercel.app](https://vercel-chatgpt-github.vercel.app) 被墙。
+2. ~~[aitoolVi.com](https://www.aitoolVi.com)，由 [@AUDI_GUZZ](https://m.okjike.com/users/4af3cfb4-1291-4a8b-b210-f515c86934a9) 免费提供~~。（2022.03.22 壮烈牺牲，提醒大家不要过度分享自己的站点出去，指不定 ChatVi 说出什么违禁词出来）。
+3. [vercel.app](https://vercel-chatVi-github.vercel.app) 被墙。
 
 API Key 由我自己免费提供，请不要滥用，不提供长期服务，请自行部署。
 
@@ -16,11 +16,11 @@ API Key 由我自己免费提供，请不要滥用，不提供长期服务，请
 
 - 设置
 
-  - 系统角色指令：会在每次提问时添加，一定用加句号。主要用于对 ChatGPT 的语气，口头禅这些进行定制。
+  - 系统角色指令：会在每次提问时添加，一定用加句号。主要用于对 ChatVi 的语气，口头禅这些进行定制。
 
-  - 思维发散程度：越高 ChatGPT 思维就越发散，开始乱答。根据不同的问题可以调节这个选项，创意性的就可以调高一点。
+  - 思维发散程度：越高 ChatVi 思维就越发散，开始乱答。根据不同的问题可以调节这个选项，创意性的就可以调高一点。
 
-  - 开启连续对话：OpenAI 并没有提供 ChatGPT 那样的上下文功能，只能每次都把全部对话传过去，并且都要算 token，而且仍然有最大 4096 token 的限制。
+  - 开启连续对话：OpenAI 并没有提供 ChatVi 那样的上下文功能，只能每次都把全部对话传过去，并且都要算 token，而且仍然有最大 4096 token 的限制。
 
 - token 是怎么算的：OpenAI 有它自己的算法，大多数时候是一个单词 1 token，一个汉字 2 token。
 - Open AI Key 要怎么获得：注册 OpenAI 的帐号，然后 [生成 Key](https://platform.openai.com/account/api-keys) 就行了。现在注册就送 5 美元，可以用一两个月。闲注册麻烦，可以直接去买号，自行搜索。注意不要被骗，一般 5 元以下可以入手，看到有 120 美元的 key，这种属于是绑了虚拟信用卡，可以透支 120 美元，只能用一个月，而且容易封号。
@@ -38,12 +38,12 @@ API Key 由我自己免费提供，请不要滥用，不提供长期服务，请
 
 
 
-## 部署一个你自己的 ChatGPT 网站（免费）
+## 部署一个你自己的 ChatVi 网站（免费）
 [![](assets/powered-by-vercel.svg)](http://vercel.com/?utm_source=busiyi&utm_campaign=oss)
 
 如果你只需要部署一个你自己用的网站，而不需要定制，那么你完全不需要在本地跑起来，你可以直接点击下面的按钮，然后按照提示操作，然后在 Vercel 中填入环境变量即可。vercel.app 域名已经被墙，但 vercel 本身没有被墙，所以你绑定自己的域名就可以了。如果广泛分享，域名有被墙的风险。
 
-[![Deploy with Vercel](https://vercel.com/button?utm_source=busiyi&utm_campaign=oss)](https://vercel.com/new/clone?utm_source=busiyi&utm_campaign=oss&repository-url=https://github.com/ourongxing/chatgpt-vercel&env=OPENAI_API_KEY)
+[![Deploy with Vercel](https://vercel.com/button?utm_source=busiyi&utm_campaign=oss)](https://vercel.com/new/clone?utm_source=busiyi&utm_campaign=oss&repository-url=https://github.com/ourongxing/chatVi-vercel&env=OPENAI_API_KEY)
 
 不过上面这种方式不容易更新，最好还是先 fork 本仓库，然后在 [Vercel](https://vercel.com/new?utm_source=busiyi&utm_campaign=oss) 中导入你自己的仓库，之后要更新就在 Github 里点击 `Sync fork` 就可以同步更新了。
 
@@ -95,8 +95,8 @@ API Key 由我自己免费提供，请不要滥用，不提供长期服务，请
   archiveSession: false, // 记录对话内容，刷新后不会清空对话
   openaiAPIKey: "", // 默认填写的 key，不需要填写，否则其他人看得到。
   password: "", // 默认填写的密码，不需要填写，否则其他人看得到。
-  openaiAPITemperature: 60, // 0-100 越高 ChatGPT 思维就越发散，开始乱答
-  systemRule: "" // 系统角色指令，会在每次提问时添加。主要用于对 ChatGPT 的语气，口头禅这些进行定制。
+  openaiAPITemperature: 60, // 0-100 越高 ChatVi 思维就越发散，开始乱答
+  systemRule: "" // 系统角色指令，会在每次提问时添加。主要用于对 ChatVi 的语气，口头禅这些进行定制。
 }
 ```
 
@@ -106,11 +106,11 @@ API Key 由我自己免费提供，请不要滥用，不提供长期服务，请
 2. 修改 `prompts.md`。
 3. Pull Request 即可。
 
-如果你不懂这个操作，也可以直接在 Issues 提交你的 Prompts。目前大部分 Prompts 来自于 [awesome-chatgpt-prompts-zh](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)，当然，这个仓库大多数也是翻译的 [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)，一并感谢。
+如果你不懂这个操作，也可以直接在 Issues 提交你的 Prompts。目前大部分 Prompts 来自于 [awesome-chatVi-prompts-zh](https://github.com/PlexPt/awesome-chatVi-prompts-zh)，当然，这个仓库大多数也是翻译的 [awesome-chatVi-prompts](https://github.com/f/awesome-chatVi-prompts)，一并感谢。
 
 #### 要求
 
-- 把需要输入的内容放在最后，可以提示 ChatGPT 开始输入了，比如 “我的第一句话是：”。
+- 把需要输入的内容放在最后，可以提示 ChatVi 开始输入了，比如 “我的第一句话是：”。
 - 尽可能去优化已有的 Prompts，而不是重复添加。
 - 添加到结尾，我会定期整理。
 

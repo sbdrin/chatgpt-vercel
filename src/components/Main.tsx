@@ -465,7 +465,7 @@ export default function (props: {
                 "border-top-left-radius":
                   compatiblePrompt().length === 0 ? "0.25rem" : 0
               }}
-              class="self-end py-3 resize-none w-full px-3 text-slate-7 dark:text-slate bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none placeholder:text-slate-400 placeholder:text-slate-400 placeholder:op-40"
+              class="self-end py-3 cursor-text resize-none w-full px-3 text-slate-7 dark:text-slate bg-slate bg-op-15 focus:bg-op-20 focus:ring-0 focus:outline-none placeholder:text-slate-400 placeholder:text-slate-400 placeholder:op-40"
               rounded-l
             />
             <Show when={inputContent()}>

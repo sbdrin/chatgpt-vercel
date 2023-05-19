@@ -3,7 +3,7 @@ import type { ChatMessage } from "~/types"
 import { countTokens } from "~/utils/tokens"
 import { fetchWithTimeout } from "~/utils"
 
-const maxTokens = 3000
+const maxTokens = 30000000
 export const post: APIRoute = async context => {
   try {
     const body = await context.request.json()

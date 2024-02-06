@@ -43,7 +43,7 @@ export const baseURL = import.meta.env.NOGFW
       ""
     )
 
-const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS)
+const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS) || 16000
 
 const pwd = import.meta.env.PASSWORD
 
@@ -96,7 +96,7 @@ export const post: APIRoute = async context => {
       return acc + tokens
     }, 0)
 
-    if (tokens > (Number.isInteger(maxTokens) ? maxTokens : 3072)) {
+    if (tokens > maxTokens) {
       if (messages.length > 1)
         throw new Error(
           `由于开启了连续对话选项，导致本次对话过长，请清除部分内容后重试，或者关闭连续对话选项。`

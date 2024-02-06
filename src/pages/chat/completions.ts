@@ -3,7 +3,7 @@ import type { ChatMessage } from "~/types"
 import { countTokens } from "~/utils/tokens"
 import { fetchWithTimeout } from "~/utils"
 
-const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS) || 16000
+const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS) || 15000
 export const post: APIRoute = async context => {
   try {
     const body = await context.request.json()

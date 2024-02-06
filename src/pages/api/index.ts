@@ -43,7 +43,7 @@ export const baseURL = import.meta.env.NOGFW
       ""
     )
 
-const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS) || 16000
+const maxTokens = Number(import.meta.env.MAX_INPUT_TOKENS) || 15000
 
 const pwd = import.meta.env.PASSWORD
 
